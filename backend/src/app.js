@@ -10,7 +10,8 @@ const port = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin: "https://blogworld-s1b4.onrender.com",
     methods: ["GET", "POST", "UPDATE", "DELETE"],
   })
 );
@@ -24,7 +25,8 @@ main()
   });
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/Blog");
+  // await mongoose.connect("mongodb://127.0.0.1:27017/Blog");
+  await mongoose.connect(process.env.MONGO_URI)
 }
 
 app.use(express.json());

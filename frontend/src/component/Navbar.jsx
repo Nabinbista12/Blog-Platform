@@ -10,13 +10,15 @@ export default function Navbar() {
 
   return (
     <nav className="bg-blue-600 text-white px-8 py-4 flex items-center justify-between shadow-md">
+      {/* Logo / Brand */}
       <div className="text-2xl font-bold">
         <Link to="/" className="hover:text-yellow-300 transition">
           BlogWorld
         </Link>
       </div>
 
-      <div className="flex items-center space-x-8">
+      {/* Links / Buttons */}
+      <div className="flex items-center space-x-6">
         {!checkLoggedIn() ? (
           <>
             <Link
@@ -34,6 +36,11 @@ export default function Navbar() {
           </>
         ) : (
           <>
+            {/* Show user name */}
+            {/* <span className="font-medium bg-yellow-300 text-blue-800 px-3 py-1 rounded-full shadow-sm">
+              {user?.username || "User"}
+            </span> */}
+
             <button
               onClick={logout}
               className="bg-yellow-400 text-blue-800 font-semibold px-4 py-2 rounded hover:bg-yellow-300 transition"
